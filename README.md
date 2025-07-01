@@ -29,7 +29,7 @@ You can download your own CSV file from [Movebank](https://www.movebank.org/)
 
 ## Screenshots
 ![Screenshot of static](screenshot1.png)
-[Screen Recording](sr1.mp4)
+![Screen Recording](sr1.gif)
 
 ## Things I want to do to it.
 - [ ] Allow saving maps
