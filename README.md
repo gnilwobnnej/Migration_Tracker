@@ -4,6 +4,8 @@ This streamlit app lets you visualize GPS tracked animal migrations. It comes wi
 
 You can download your own CSV file from [Movebank](https://www.movebank.org/)
 
+Check out the app online via [Streamlit](https://migrationtracker-gebpob8zprneqbhnv8rxkm.streamlit.app/)
+
 ## Using the app
 1. Choose the data
     - Use the build in sample
