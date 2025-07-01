@@ -68,7 +68,7 @@ if view == "Static Map":
     center_lat = df["location-lat"].mean()
     center_lon = df["location-long"].mean()
     zoom_level = 6 if len(df) > 1 else 10
-    
+
     #gives a satelite-style base layer "Esri worldImagery"
     m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom_level, tiles="Esri WorldImagery")
 
@@ -153,7 +153,7 @@ else:
 with st.expander("How to use this app"):
     st.markdown(
         '''
-        1. Select **Sample dataset** or upload your own Movebank CSV in the sidebar.  
+        1. Upload own dataset or continue with the sample(Artic fox (Vulpes lagopus) from Argos Greenland (Karupelv)).    
         2. Filter the individual animal IDs if desired.  
         3. Switch between *Static Map* (folium) and *Animated Map* (Plotly) views.  
         4. Adjust the animation frame interval to smooth or accelerate the playback.  
