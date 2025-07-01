@@ -134,7 +134,7 @@ else:
 
     #chooses a light , minimal base map and enlarges the text and points. 
     fig.update_layout(
-        mapbox_style="carto-positron",
+        mapbox_style="open-street-map",
         font=dict(size=14),
         legend=dict(
             title_font=dict(size=16),
