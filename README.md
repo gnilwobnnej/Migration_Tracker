@@ -28,7 +28,7 @@ You can download your own CSV file from [Movebank](https://www.movebank.org/)
 > plotly
 
 ## Screenshots
-[Screenshot of static](screenshot1.png)
+![Screenshot of static](screenshot1.png)
 [Screen Recording](sr1.mp4)
 
 ## Things I want to do to it.
