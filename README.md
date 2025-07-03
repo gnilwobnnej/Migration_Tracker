@@ -14,6 +14,11 @@ Check out the app online via [Streamlit](https://migrationtracker-gebpob8zprneqb
 3. You can pick your view
     - You can look at the static view
     - or the animated map that shows a timeline with adjustable intervals.
+    - you can choose heatmap option as well.
+
+## Updates
+
+- 7/3/2025: Added heatmap to the program.
 
 ## Dependencies
 - All tools that are needed are in the [Requirements text file](requirements.txt)
@@ -32,7 +37,8 @@ Check out the app online via [Streamlit](https://migrationtracker-gebpob8zprneqb
 ## Screenshots
 ![Screenshot of static](screenshot1.png)
 ![Screen Recording](sr1.gif)
+![Screenshot of Heatmap](screenshot2.png)
 
 ## Things I want to do to it.
 - [ ] Allow saving maps
-- [ ] Heatmap?
+- [x] Heatmap?

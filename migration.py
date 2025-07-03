@@ -6,6 +6,7 @@ from matplotlib import colormaps #gives nice reusable color palettes
 import matplotlib.colors as mcolors #turns matplotlib colors into webfriendly strings.
 import plotly.express as px #builds animated and interactive charts.
 from pathlib import Path #makes file paths os independent. 
+from folium.plugins import HeatMap #adds heatmap
 
 
 
@@ -58,7 +59,7 @@ df = df[df["individual-local-identifier"].isin(selected_animals)]
 
 # --- Main view selection 
 #radio buttons in the main area toggle between the two maps.
-view = st.radio("Choose view:", ("Static Map", "Animated Map"))
+view = st.radio("Choose view:", ("Static Map", "Animated Map", "Heatmap"))
 
 # --- Static Map 
 if view == "Static Map":
@@ -107,7 +108,7 @@ if view == "Static Map":
     st_folium(m, width="100%", height=850)
 
 # --- Animated Map 
-else:
+elif view == "Animated Map":
     st.subheader("Animated Migration")
 
     # slider  chooses how many days of data appear in each animation frame.
@@ -147,6 +148,28 @@ else:
 
     #renters the interacting animation auto sizing to the page width. 
     st.plotly_chart(fig, use_container_width=True)
+
+# --- Heatmap
+
+elif view == "Heatmap":
+    st.subheader("Heatmap of locations")
+
+    #center the map
+    center_lat = df["location-lat"].mean()
+    center_lon = df["location-long"].mean()
+    zoom_level = 6 if len(df) > 1 else 10
+
+    #creates the map for the heatmap
+    m = folium.Map(location=[center_lat, center_lon], zoom_start= zoom_level, tiles= "Cartodb Positron")
+
+    #extracts just the lat/lon values
+    heat_data = df[["location-lat", "location-long"]].values.tolist()
+
+    #add heatmap layer
+    HeatMap(heat_data, radius = 8, blur = 15).add_to(m)
+
+    #displays the map
+    st_folium(m, width = "100%" , height = 850)
 # --- Footer 
 
 #adds the howto use section and keeps it hidden till clicked. 
